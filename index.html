@@ -5,31 +5,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ader's portfolio</title>
+    <link rel="icon" href="./assets/images/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css"
         integrity="sha512-IJEbgDEF7OeKJRa0MY2PApnyJHRIsgzCveek4ec8VWQ+7KG3ZSKVNYa5xP/Gh0hVP0Mwb+gBsk+GwR3JQGhQNg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./index.css">
 </head>
 
 <body>
+    <!-- header -->
     <header>
         <div class="header-wrap">
             <h1 class="logo">Ader</h1>
             <div class="navbar">
-                <a href="#about"><button>關於我</button></a>
-                <a href="#experience"><button>經驗</button></a>
-                <a href="#projects"><button>作品集</button></a>
+                <button id="btn-about">About</button>
+                <button id="btn-skill">Skill</button>
+                <button id="btn-experience">Experience</button>
+                <button id="btn-portfolio">portfolio</button>
             </div>
         </div>
     </header>
+    <!-- 照片輪播 -->
     <section id="hero">
-        <div class="img-box">
-            <img src="https://images.pexels.com/photos/2747449/pexels-photo-2747449.jpeg" class="img">
+        <button class="down-arrow">
+            <div class="arrow-img-box">
+                <img src="./assets/images/Animation - arrow.gif" class="img">
+            </div>
+        </button>
+        <div class="carousel">
+            <div class="img-box">
+                <img src="https://images.pexels.com/photos/2747449/pexels-photo-2747449.jpeg" class="img">
+            </div>
+            <div class="img-box">
+                <img src="https://images.pexels.com/photos/625644/pexels-photo-625644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    class="img">
+            </div>
+            <div class="img-box">
+                <img src="https://images.pexels.com/photos/1047442/pexels-photo-1047442.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    class="img">
+            </div>
+            <div class="img-box">
+                <img src="https://images.pexels.com/photos/3052307/pexels-photo-3052307.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    class="img">
+            </div>
         </div>
+
     </section>
+    <!-- 關於我 -->
     <section id="about">
         <h2>About Me</h2>
         <div class="about-wrap">
@@ -47,163 +75,261 @@
         </div>
 
     </section>
+    <!-- 技能 -->
     <section id="skill">
-        <h2>Skill</h2>
-        <div class="skill-wrap">
-            <div class="skill-card">
-                <h3>前端</h3>
-                <ul>
-                    <li>HTML / CSS</li>
-                    <li>Bootstrap</li>
-                    <li>SASS / SCSS</li>
-                    <li>JavaScript / jQuery</li>
-                    <li>React / Next.js</li>
-                    <li>Redux</li>
-                    <li>RWD響應式設計</li>
-                    <li>API串接</li>
-                </ul>
+        <div class="skill-full">
+            <div class="skill-full-card">
+                <img src="https://images.pexels.com/photos/574073/pexels-photo-574073.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    class="img">
+                <div class="skill-full-content">
+                    <h2>前端技術</h2>
+                    <ul>
+                        <li>HTML / CSS</li>
+                        <li>Bootstrap</li>
+                        <li>SASS / SCSS</li>
+                        <li>JavaScript / jQuery</li>
+                        <li>React / Next.js</li>
+                        <li>Redux</li>
+                        <li>RWD響應式設計</li>
+                        <li>API串接</li>
+                    </ul>
+                </div>
             </div>
-            <div class="skill-card">
-                <h3>後端</h3>
-                <ul>
-                    <li>Node.js / Express</li>
-                    <li>PHP</li>
-                    <li>MySQL / NoSQL</li>
-                    <li>Firebase</li>
-                </ul>
+            <div class="skill-full-card">
+                <img src="https://images.pexels.com/photos/574077/pexels-photo-574077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    class="img">
+                <div class="skill-full-content">
+                    <h2>後端技術</h2>
+                    <ul>
+                        <li>Node.js / Express</li>
+                        <li>PHP</li>
+                        <li>MySQL / NoSQL</li>
+                        <li>Firebase</li>
+                    </ul>
+                </div>
             </div>
-            <div class="skill-card">
-                <h3>相關技術</h3>
-                <ul>
-                    <li>Git</li>
-                    <li>npm</li>
-                    <li>Figma</li>
-                    <li>網頁部署</li>
-                </ul>
+            <div class="skill-full-card">
+                <img src="https://images.pexels.com/photos/1420702/pexels-photo-1420702.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    class="img">
+                <div class="skill-full-content">
+                    <h2>相關技術</h2>
+                    <ul>
+                        <li>Git</li>
+                        <li>npm</li>
+                        <li>Figma</li>
+                        <li>網頁部署</li>
+                    </ul>
+                </div>
             </div>
         </div>
+        <div class="skill-wrap">
+            <div class="skill-btn-group">
+                <button id="skill-prev"><i class="fa-solid fa-chevron-left"></i></button>
+                <button id="skill-next"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            <div class="skill-panel-wrap">
+                <div class="skill-panel">
+                    <div class="skill-card">
+                        <h5>前端技術</h5>
+                        <div class="skill-img-box-wrap">
+                            <div class="skill-img-box"><img src="./assets/images/logo/html.png" class="img"></div>
+                            <div class="skill-img-box"><img src="./assets/images/logo/css.png" class="img"></div>
+                            <div class="skill-img-box"><img src="./assets/images/logo/js.png" class="img"></div>
+                            <div class="skill-img-box"><img src="./assets/images/logo/jQuery.png" class="img"></div>
+                            <div class="skill-img-box"><img src="./assets/images/logo/react.png" class="img"></div>
+                            <div class="skill-img-box"><img src="./assets/images/logo/Next.js.png" class="img"></div>
+                            <div class="skill-img-box"><img src="./assets/images/logo/Bootstrap.png" class="img"></div>
+                            <div class="skill-img-box"><img src="./assets/images/logo/sass.png" class="img"></div>
+                            <div class="skill-img-box"><img src="./assets/images/logo/redux.png" class="img"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <h5>後端技術</h5>
+                        <div class="skill-img-box-wrap">
+                            <div class="skill-img-box2"><img src="./assets/images/logo/node.png" class="img"></div>
+                            <div class="skill-img-box2"><img src="./assets/images/logo/express.png" class="img"></div>
+                            <div class="skill-img-box2"><img src="./assets/images/logo/php.png" class="img"></div>
+                            <div class="skill-img-box2"><img src="./assets/images/logo/mysql.png" class="img"></div>
+                            <div class="skill-img-box"><img src="./assets/images/logo/firebase.png" class="img"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <h5>相關技術</h5>
+                        <div class="skill-img-box-wrap">
+                            <div class="skill-img-box"><img src="./assets/images/logo/figma2.png" class="img"></div>
+                            <div class="skill-img-box2"><img src="./assets/images/logo/NPM.png" class="img"></div>
+                            <div class="skill-img-box"><img src="./assets/images/logo/Git.png" class="img"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
+    <!-- 經驗 -->
     <section id="experience">
         <div class="experience-wrap">
-            <div class="code">
-                <h2>學習歷程</h2>
-                <div>
-                    <h4>2024/05 - present <span>Udemy - React / Vue / TypeScript</span></h4>
-                    <h4>2023/12 - 2024/05 <span>資展國際 - 前端工程師就業養成班</span></h4>
-                    <h4>2023/12 - 2024/05 <span>Udemy - 網頁全端開發</span></h4>
-                    <h4>2023/09 - 2024/01 <span>台大彭彭老師 - 前端工程師線上課程 </span></h4>
-                </div>
+            <div class="experience-btn-group">
+                <button id="jobBtn" class="active">
+                    <div>工作經歷</div>
+                </button>
+                <button id="codeBtn">
+                    <div>學習歷程</div>
+                </button>
             </div>
-            <div class="job">
-                <h2>工作經歷</h2>
-                <div>
-                    <div class="job-card">
-                        <div class="img-box"><img src="./assets/images/truefan.jpg" class="img"></div>
-                        <div class="job-content">
-                            <div class="job-click-wrap">
-                                <h4>產品經理 <span>2022/06 - 2023/12</span></h4>
-                                <h4>初飯包 外帶餐盒專賣店</h4>
+            <div class="experience-type-wrap">
+                <div class="job">
+                    <div class="job-card-wrap">
+                        <div class="job-card">
+                            <div class="img-box"><img src="./assets/images/truefan.jpg" class="img"></div>
+                            <div class="job-content">
+                                <div class="job-click-wrap">
+                                    <h4>產品經理 </h4>
+                                    <h4>初飯包 外帶餐盒專賣店</h4>
+                                    <span>2022/06 - 2023/12</span>
+                                </div>
+                                <ul class="job-click-show">
+                                    <li>負責餐點之設計研發</li>
+                                    <li>品牌行銷與開源</li>
+                                    <li>廠商溝通與合作</li>
+                                    <li>餐點與食材品質控管</li>
+                                </ul>
                             </div>
-                            <ul class="job-click-show">
-                                <li>負責餐點之設計研發</li>
-                                <li>品牌行銷與開源</li>
-                                <li>廠商溝通與合作</li>
-                                <li>餐點與食材品質控管</li>
-                            </ul>
+                        </div>
+                        <div class="job-card">
+                            <div class="img-box"><img
+                                    src="https://mms.img.susercontent.com/a1889adc6503494350c6e5591caec908" class="img">
+                            </div>
+                            <div class="job-content">
+                                <div class="job-click-wrap">
+                                    <h4>業務代表</h4>
+                                    <h4>龍生藥品股份有限公司</h4>
+                                    <span>2019/06 - 2022/05</span>
+                                </div>
+                                <ul class="job-click-show">
+                                    <li>協助客戶端狀況排解與維繫</li>
+                                    <li>維持公司業績排名前三名</li>
+                                    <li>藥局診所陌生開發，拓展產品市占率</li>
+                                    <li>藥局診所seminar，傳達新知與衛教</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <div class="job-card">
-                        <div class="img-box"><img
-                                src="https://mms.img.susercontent.com/a1889adc6503494350c6e5591caec908" class="img">
-                        </div>
-                        <div class="job-content">
-                            <div class="job-click-wrap">
-                                <h4>業務代表 <span>2019/06 - 2022/05</span></h4>
-                                <h4>龍生藥品股份有限公司</h4>
-                            </div>
-                            <ul class="job-click-show">
-                                <li>協助客戶端狀況排解與維繫</li>
-                                <li>維持公司業績排名前三名</li>
-                                <li>藥局診所陌生開發，拓展產品市占率</li>
-                                <li>藥局診所seminar，傳達新知與衛教</li>
-                            </ul>
-                        </div>
+                </div>
+                <div class="code">
+                    <div class="code-wrap">
+                        <h4>2024/05 - present <span>Udemy - React / Vue / TypeScript</span></h4>
+                        <h4>2023/12 - 2024/05 <span>資展國際 - 前端工程師就業養成班</span></h4>
+                        <h4>2023/12 - 2024/05 <span>Udemy - 網頁全端開發</span></h4>
+                        <h4>2023/09 - 2024/01 <span>台大彭彭老師 - 前端工程師線上課程 </span></h4>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- 作品 -->
     <section id="projects">
+        <h2>作品集</h2>
+        <button id="project-prev"><i class="fa-solid fa-chevron-left"></i></button>
+        <button id="project-next"><i class="fa-solid fa-chevron-right"></i></button>
         <div class="project-wrap">
-            <div class="project-card">
-                <div class="img-box"><img src="./assets/images/project/learn-english.png" class="img"></div>
-                <div class="project-content">
-                    <h4>英文學習工具</h4>
-                    <p>這是一個英文學習工具，註冊登入後可新增/刪除單字、加入/取消收藏、隨機測驗。</p>
-                    <div class="tools">
-                        <div class="tool">React</div>
-                        <div class="tool">Redux</div>
-                        <div class="tool">SCSS</div>
-                        <div class="tool">Express</div>
-                        <div class="tool">Firebase</div>
+            <div class="project-panel">
+                <a href="https://learn-english-react.vercel.app/">
+                    <div class="project-card">
+                        <div class="img-box"><img src="./assets/images/project/learn-english.png" class="img"></div>
+                        <div class="project-content">
+                            <h4>英文學習工具</h4>
+                            <p>這是一個英文學習工具，註冊登入後可新增/刪除單字、加入/取消收藏、隨機測驗。</p>
+                            <div class="tools">
+                                <div class="tool">React</div>
+                                <div class="tool">Redux</div>
+                                <div class="tool">SCSS</div>
+                                <div class="tool">Express</div>
+                                <div class="tool">Firebase</div>
+                            </div>
+                        </div>
+                        <div class="detail">
+                            <h2>See More</h2>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="img-box"><img src="./assets/images/project/baseball-front.png" class="img"></div>
-                <div class="project-content">
-                    <h4>棒球電商平台</h4>
-                    <p>資展期末專題，實作棒球電商平台，負責項目為會員系統、首頁、場域地圖、全站搜索、API製作與串接、程式整合。</p>
-                    <div class="tools">
-                        <div class="tool">Next.js</div>
-                        <div class="tool">Bootstrap</div>
-                        <div class="tool">CSS Module</div>
-                        <div class="tool">Express</div>
-                        <div class="tool">XAMPP</div>
+                </a>
+                <a href="https://www.cakeresume.com/portfolios/73ec4f">
+                    <div class="project-card">
+                        <div class="img-box"><img src="./assets/images/project/baseball-front.png" class="img"></div>
+                        <div class="project-content">
+                            <h4>棒球電商平台</h4>
+                            <p>實作棒球電商平台，負責項目為會員系統、首頁、場域地圖、全站搜索、API製作與串接、程式整合。</p>
+                            <div class="tools">
+                                <div class="tool">Next.js</div>
+                                <div class="tool">Bootstrap</div>
+                                <div class="tool">CSS Module</div>
+                                <div class="tool">Express</div>
+                                <div class="tool">XAMPP</div>
+                            </div>
+                        </div>
+                        <div class="detail">
+                            <h2>See More</h2>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="img-box"><img src="./assets/images/project/baseball-back.png" class="img"
-                        style="object-position: left;"></div>
-                <div class="project-content">
-                    <h4>電商平台後臺系統</h4>
-                    <p>資展期中專題，實作棒球電商平台，負責項目為優惠券相關功能、切版、環境建立與程式整合。</p>
-                    <div class="tools">
-                        <div class="tool">PHP</div>
-                        <div class="tool">Bootstrap</div>
-                        <div class="tool">XAMPP</div>
+                </a>
+                <a href="https://www.cakeresume.com/portfolios/51e3f6">
+                    <div class="project-card">
+                        <div class="img-box"><img src="./assets/images/project/baseball-back.png" class="img"
+                                style="object-position: left;"></div>
+                        <div class="project-content">
+                            <h4>電商平台後臺系統</h4>
+                            <p>實作棒球電商平台，負責項目為優惠券相關功能、切版、環境建立與程式整合。</p>
+                            <div class="tools">
+                                <div class="tool">PHP</div>
+                                <div class="tool">Bootstrap</div>
+                                <div class="tool">XAMPP</div>
+                            </div>
+                        </div>
+                        <div class="detail">
+                            <h2>See More</h2>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="img-box"><img src="./assets/images/project/layout (1).png" class="img"
-                        style="object-position: left;"></div>
-                <div class="project-content">
-                    <h4>切版相關</h4>
-                    <p>學習前端工程後，相關切版製作與練習。</p>
-                    <div class="tools">
-                        <div class="tool">HTML / CSS</div>
-                        <div class="tool">Bootstrap</div>
-                        <div class="tool">JavaScript</div>
+                </a>
+                <a href="https://codepen.io/collection/QWREWw">
+                    <div class="project-card">
+                        <div class="img-box"><img src="./assets/images/project/layout (1).png" class="img"
+                                style="object-position: left;"></div>
+                        <div class="project-content">
+                            <h4>切版相關</h4>
+                            <p>學習前端工程後，相關切版製作與練習。</p>
+                            <div class="tools">
+                                <div class="tool">HTML / CSS</div>
+                                <div class="tool">Bootstrap</div>
+                                <div class="tool">JavaScript</div>
+                            </div>
+                        </div>
+                        <div class="detail">
+                            <h2>See More</h2>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="img-box"><img src="./assets/images/project/layout (1).png" class="img"
-                        style="object-position: left;"></div>
-                <div class="project-content">
-                    <h4>JavaScript / jQuery</h4>
-                    <p>使用JS / jQuery進行DOM操作的相關練習作品。</p>
-                    <div class="tools">
-                        <div class="tool">HTML / CSS</div>
-                        <div class="tool">JavaScript</div>
-                        <div class="tool">jQuery</div>
+                </a>
+                <a href="https://codepen.io/collection/WvBqvz">
+                    <div class="project-card">
+                        <div class="img-box"><img src="./assets/images/project/layout (2).png" class="img"
+                                style="object-position: left;"></div>
+                        <div class="project-content">
+                            <h4>JavaScript / jQuery</h4>
+                            <p>使用JS / jQuery進行DOM操作的相關練習作品。</p>
+                            <div class="tools">
+                                <div class="tool">HTML / CSS</div>
+                                <div class="tool">JavaScript</div>
+                                <div class="tool">jQuery</div>
+                            </div>
+                        </div>
+                        <div class="detail">
+                            <h2>See More</h2>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
+    <!-- footer -->
     <footer>
         <div>
             <a href="https://github.com/Ader0309"><img src="./assets/images/github-mark-white.png" class="img"></a>

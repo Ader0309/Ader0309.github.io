@@ -1,12 +1,29 @@
-$primary: #60c0f0;
-$second: #90d8f0;
-$third: #daebf2;
-$light: #f0f0f0;
+$primary: #005792;
+$second: #53cde2;
+$third: #d1f4fa;
+$light: #edf9fc;
 $dark: #545454;
+$transition: 0.5s;
 
 :root {
     font-size: 16px;
     color: $dark;
+}
+//scrollbar
+::-webkit-scrollbar {
+    width: 7px;
+}
+// 軌道
+::-webkit-scrollbar-track {
+    background: $light;
+}
+// 滑塊
+::-webkit-scrollbar-thumb {
+    background: $second;
+    border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: $primary;
 }
 body {
     background: $light;
@@ -49,6 +66,10 @@ body {
         width: 100%;
         height: 100%;
     }
+    a {
+        text-decoration: none;
+        color: initial;
+    }
 }
 header {
     position: fixed;
@@ -56,7 +77,7 @@ header {
     z-index: 999;
     transition: 0.3s;
     &.scroll-down {
-        background: rgba(84, 84, 84, 0.8);
+        background: rgba(84, 84, 84, 0.5);
     }
     &:hover {
         background: $dark;
@@ -98,8 +119,32 @@ header {
     }
 }
 #hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    .down-arrow {
+        position: absolute;
+        width: 6rem;
+        height: 6rem;
+        bottom: 1rem;
+        left: calc(50% - 5rem);
+        z-index: 90;
+        background: transparent;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        .arrow-img-box {
+            width: 6rem;
+        }
+    }
     .img-box {
-        height: 100vh;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transition: 1s;
     }
 }
 
@@ -108,7 +153,7 @@ header {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    padding: 3rem;
+    height: 100vh;
 
     .about-wrap {
         width: 1200px;
@@ -118,33 +163,109 @@ header {
         flex-wrap: wrap;
     }
     .avatar {
-        width: 14rem;
+        width: 20rem;
         border-radius: 5rem;
         overflow: hidden;
     }
 }
 
 #skill {
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    height: 100vh;
+    position: relative;
     background: $third;
-    .skill-wrap {
-        display: flex;
-        .skill-card {
-            background: $light;
-            margin: 0 3rem;
-            padding: 1.5rem 3rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: 0.4s;
-            &:hover {
-                scale: 1.05;
+    .skill-full {
+        position: relative;
+        .skill-full-card {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            transition: $transition;
+            &:nth-child(1) {
+                opacity: 1;
+                z-index: 1;
             }
-            li {
-                margin-block: 0.5rem;
+            .skill-full-content {
+                position: absolute;
+                min-width: 10rem;
+                border-radius: 2rem;
+                top: 10rem;
+                left: 15rem;
+                background: $third;
+                padding: 2rem 3rem;
+            }
+        }
+    }
+    .skill-wrap {
+        position: absolute;
+        bottom: 2rem;
+        right: 0;
+        z-index: 2;
+        .skill-btn-group {
+            position: absolute;
+            bottom: 2rem;
+            right: 25rem;
+            display: flex;
+            z-index: 2;
+            gap: 1rem;
+            button {
+                background: $second;
+                color: $light;
+                border: none;
+                width: 2.5rem;
+                height: 2.5rem;
+                border-radius: 50%;
+                cursor: pointer;
+                &:hover {
+                    background: $primary;
+                }
+            }
+        }
+        .skill-panel-wrap {
+            display: flex;
+            width: 24rem;
+            padding-block: 1rem;
+            overflow: hidden;
+            .skill-panel {
+                display: flex;
+                transition: $transition;
+
+                .skill-card {
+                    background: $light;
+                    margin: 0 1rem;
+                    width: 11.5rem;
+                    padding: 1.5rem 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    opacity: 0.8;
+                    transition: $transition;
+                    border-radius: 2rem;
+                    background: url("https://media.istockphoto.com/id/1669453534/photo/3d-render-cloud-computing-circuit-board-background.jpg?s=1024x1024&w=is&k=20&c=okVK7qp59LYKAYor5fpAVoLbWjftCs37vexzBEjUecc=");
+                    &:hover {
+                        scale: 1.02;
+                    }
+                    .skill-img-box-wrap {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        .skill-img-box {
+                            width: 2rem;
+                            height: 2rem;
+                            margin: 0.5rem;
+                            padding: 0.2rem 0.3rem;
+                            background: $third;
+                            border-radius: 0.3rem;
+                        }
+                        .skill-img-box2 {
+                            width: 3rem;
+                            height: 2rem;
+                            margin: 0.5rem;
+                            padding: 0.2rem;
+                            background: $third;
+                            border-radius: 0.2rem;
+                        }
+                    }
+                }
             }
         }
     }
@@ -152,55 +273,127 @@ header {
 
 #experience {
     padding: 3rem;
-    .code {
+    height: 110vh;
+    display: flex;
+    justify-content: center;
+    .experience-wrap {
+        padding-block: 5rem;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 5rem;
-        h2 {
+        .experience-btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            align-items: center;
             margin-bottom: 3rem;
-        }
-        h4 {
-            color: $dark;
-        }
-        span {
-            margin-inline: 5rem;
-            color: $primary;
+            button {
+                padding: 0.5rem 1rem;
+                font-size: 1.7rem;
+                border: none;
+                color: $dark;
+                background: $third;
+                border-radius: 5rem;
+                cursor: pointer;
+                &.active {
+                    color: $light;
+                    background: $primary;
+                }
+                &:hover {
+                    color: $light;
+                    background: $second;
+                }
+                &:active {
+                    background: $primary;
+                    color: $light;
+                }
+                h2 {
+                    padding: 0;
+                }
+            }
         }
     }
-    .job {
+    .experience-type-wrap {
+        width: 70vw;
+        position: relative;
+        height: 100%;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        .job-card {
+        justify-content: center;
+        .code {
+            position: absolute;
+            top: 3rem;
             display: flex;
-            margin-block: 3rem;
+            flex-direction: column;
             align-items: center;
-            transition: 0.2s;
-            padding: 2rem;
-            cursor: pointer;
-            &:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 5px 5px #888;
-            }
-            .img-box {
-                width: 14rem;
-                height: 14rem;
-                border-radius: 50%;
-                overflow: hidden;
-                margin-right: 2rem;
-            }
-            .job-content {
-                .job-click-wrap {
-                    span {
-                        margin-inline: 5rem;
-                        font-size: 1.2rem;
-                    }
+            opacity: 0;
+            transition: 0.4s;
+            .code-wrap {
+                display: flex;
+                flex-direction: column;
+                gap: 2.5rem;
+                h2 {
+                    margin-bottom: 3rem;
                 }
-                .job-click-show {
-                    // display: none;
-                    li {
+                h4 {
+                    color: $dark;
+                }
+                span {
+                    margin-inline: 1.5rem;
+                    color: $primary;
+                }
+            }
+        }
+        .job {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            transition: 0.4s;
+            .job-card-wrap {
+                display: flex;
+                gap: 3rem;
+                .job-card {
+                    display: flex;
+                    flex-direction: column;
+                    // margin-block: 3rem;
+                    align-items: center;
+                    transition: 0.2s;
+                    padding: 0.5rem 1rem;
+                    cursor: pointer;
+                    z-index: 2;
+                    width: 20rem;
+                    &:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 5px 5px #888;
+                    }
+                    .img-box {
+                        width: 12rem;
+                        height: 12rem;
+                        border-radius: 50%;
+                        overflow: hidden;
                         margin-block: 1rem;
+                    }
+                    .job-content {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        .job-click-wrap {
+                            text-align: center;
+                            span {
+                                font-size: 1.2rem;
+                                color: $second;
+                            }
+                        }
+                        .job-click-show {
+                            opacity: 0;
+                            transition: 0.3s;
+                            &.show {
+                                opacity: 1;
+                            }
+                            li {
+                                margin-block: 1rem;
+                            }
+                        }
                     }
                 }
             }
@@ -210,36 +403,111 @@ header {
 
 #projects {
     background: $third;
-    padding: 3rem;
+    height: 100vh;
+    padding-block: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    button {
+        background: $second;
+        color: $light;
+        border: none;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        position: absolute;
+        cursor: pointer;
+        &:hover {
+            background: $primary;
+        }
+        &#project-prev {
+            left: 4rem;
+            top: calc(50%);
+        }
+        &#project-next {
+            right: 4rem;
+            top: calc(50%);
+        }
+    }
     .project-wrap {
         display: flex;
-        flex-wrap: wrap;
-        .project-card {
-            width: 20rem;
-            background: $light;
-            margin-inline: 1rem;
-            .img-box {
-                width: 100%;
-                height: 12rem;
-                .img {
-                    object-position: top;
-                }
-            }
-            .project-content {
-                padding: 1rem;
-                text-align: center;
+        position: relative;
+        width: 75rem;
+        height: 30rem;
+        overflow: hidden;
+        align-items: center;
 
-                .tools {
-                    display: flex;
-                    justify-content: center;
-                    flex-wrap: wrap;
-                    margin-top: 1rem;
-                    .tool {
-                        border: 1px solid $primary;
-                        padding: 0.1rem 0.3rem;
-                        margin: 0 0.2rem 0.2rem 0.2rem;
-                        border-radius: 1rem;
-                        color: $primary;
+        .project-panel {
+            position: absolute;
+            display: flex;
+            transition: $transition;
+            .project-card {
+                width: 20rem;
+                height: 100%;
+                background: $light;
+                margin-inline: 2.5rem;
+                border-radius: 1rem;
+                overflow: hidden;
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    background: rgba(84, 84, 84, 0);
+                    transition: 0.4s;
+                }
+                &:hover {
+                    &::after {
+                        background: rgba(84, 84, 84, 0.6);
+                    }
+                    .detail {
+                        opacity: 1;
+                    }
+                }
+
+                .img-box {
+                    width: 100%;
+                    height: 12rem;
+                    .img {
+                        object-position: top;
+                    }
+                }
+                .project-content {
+                    padding: 1rem;
+                    text-align: center;
+
+                    .tools {
+                        display: flex;
+                        justify-content: center;
+                        flex-wrap: wrap;
+                        margin-top: 1rem;
+                        .tool {
+                            border: 1px solid $primary;
+                            padding: 0.1rem 0.3rem;
+                            margin: 0 0.2rem 0.2rem 0.2rem;
+                            border-radius: 1rem;
+                            color: $primary;
+                        }
+                    }
+                }
+                .detail {
+                    position: absolute;
+                    width: 10rem;
+                    background: $third;
+                    top: calc(50% - 2rem);
+                    left: calc(50% - 5.5rem);
+                    z-index: 2;
+                    border-radius: 1rem;
+                    padding: 1rem;
+                    text-align: center;
+                    opacity: 0;
+                    transition: 0.4s;
+                    h2 {
+                        padding: 0;
                     }
                 }
             }
@@ -249,11 +517,11 @@ header {
 
 footer {
     background: $dark;
-    max-height: 10rem;
+    height: 10rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 1rem 0;
     div {
         display: flex;
@@ -269,6 +537,6 @@ footer {
     }
     h6 {
         padding: 0;
-        margin-top: 1rem;
+        margin-top: 3rem;
     }
 }
