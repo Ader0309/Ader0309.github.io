@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Lobster&display=swap");
+@import url("//fonts.googleapis.com/earlyaccess/notosanstc.css");
 :root {
   font-size: 16px;
   color: #545454;
+  font-family: "Comic Sans MS", "Noto Sans TC";
 }
 
 ::-webkit-scrollbar {
@@ -34,10 +37,11 @@ body h6 {
   padding-bottom: 1rem;
 }
 body h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
 }
 body h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  color: #005792;
 }
 body h3 {
   font-size: 1.75rem;
@@ -86,6 +90,20 @@ header:hover {
   justify-content: space-between;
   padding: 1rem 3rem;
 }
+.header-wrap #logo {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.header-wrap #logo:hover .logo {
+  transform: translateY(-0.1rem);
+}
+.header-wrap #logo .logo {
+  transition: 0.5s;
+  font-family: "Caveat";
+  text-shadow: 1px 2px #edf9fc, 0 0 10px #005792;
+  padding: 0;
+}
 .header-wrap .navbar {
   display: flex;
 }
@@ -96,6 +114,7 @@ header:hover {
   background: #d1f4fa;
   font-size: 1.2rem;
   border-radius: 1rem;
+  font-family: "Caveat";
   cursor: pointer;
   transition: 0.3s;
 }
@@ -106,6 +125,7 @@ header:hover {
 .header-wrap .navbar button:hover {
   background: #53cde2;
   color: #edf9fc;
+  transform: translateY(-0.1rem);
 }
 .header-wrap .navbar button:active {
   background: #005792;
@@ -119,6 +139,23 @@ header:hover {
   position: relative;
   height: 100vh;
   overflow: hidden;
+}
+#hero #hero-text {
+  position: absolute;
+  z-index: 90;
+  text-align: center;
+  left: calc(50% - 22.5rem);
+  top: calc(50% - 7.5rem);
+  width: 45rem;
+  height: 15rem;
+}
+#hero #hero-text h1 {
+  color: #53cde2;
+  font-size: 3.5rem;
+}
+#hero #hero-text h1 span {
+  opacity: 0;
+  display: inline-block;
 }
 #hero .down-arrow {
   position: absolute;
@@ -137,7 +174,7 @@ header:hover {
 #hero .down-arrow .arrow-img-box {
   width: 6rem;
 }
-#hero .img-box {
+#hero .carousel .img-box {
   position: absolute;
   top: 0;
   width: 100%;
@@ -159,10 +196,17 @@ header:hover {
   align-items: center;
   flex-wrap: wrap;
 }
-#about .avatar {
+#about .about-wrap .avatar {
   width: 20rem;
   border-radius: 5rem;
   overflow: hidden;
+}
+#about .about-wrap .about-content p {
+  line-height: 2rem;
+}
+#about .about-wrap .about-content span {
+  font-style: italic;
+  color: #53cde2;
 }
 
 #skill {
@@ -185,12 +229,49 @@ header:hover {
 }
 #skill .skill-full .skill-full-card .skill-full-content {
   position: absolute;
-  min-width: 10rem;
+  width: 11rem;
   border-radius: 2rem;
   top: 10rem;
-  left: 15rem;
+  left: 20rem;
   background: #d1f4fa;
   padding: 2rem 3rem;
+  transition: 0.5s;
+}
+#skill .skill-full .skill-full-card .skill-full-content .skill-content-box {
+  display: flex;
+  position: relative;
+}
+#skill .skill-full .skill-full-card .skill-full-content .skill-content-box .skill-main-content {
+  width: 15rem;
+}
+#skill .skill-full .skill-full-card .skill-full-content .skill-content-box .skill-content-detail {
+  position: absolute;
+  left: 0rem;
+  transition: 0.5s;
+  opacity: 0;
+  width: 30rem;
+  height: 100%;
+  font-size: 0.9rem;
+  overflow: hidden;
+}
+#skill .skill-full .skill-full-card .skill-full-content .skill-content-box .skill-content-detail p {
+  line-height: 3rem;
+}
+#skill .skill-full .skill-full-card .skill-full-content:hover {
+  width: 40rem;
+}
+#skill .skill-full .skill-full-card .skill-full-content:hover .skill-content-detail {
+  opacity: 1;
+  left: 12rem;
+}
+#skill .skill-full .skill-full-card .skill-full-content:not(:hover) .skill-content-detail {
+  transition: 0.2s;
+}
+#skill .skill-full .skill-full-card .skill-full-content h3 {
+  color: #005792;
+}
+#skill .skill-full .skill-full-card .skill-full-content p {
+  font-style: italic;
 }
 #skill .skill-wrap {
   position: absolute;
@@ -214,9 +295,13 @@ header:hover {
   height: 2.5rem;
   border-radius: 50%;
   cursor: pointer;
+  transition: 0.5s;
 }
 #skill .skill-wrap .skill-btn-group button:hover {
   background: #005792;
+}
+#skill .skill-wrap .skill-btn-group button:active {
+  background: #53cde2;
 }
 #skill .skill-wrap .skill-panel-wrap {
   display: flex;
@@ -293,6 +378,7 @@ header:hover {
   background: #d1f4fa;
   border-radius: 5rem;
   cursor: pointer;
+  transition: 0.5s;
 }
 #experience .experience-wrap .experience-btn-group button.active {
   color: #edf9fc;
@@ -338,7 +424,7 @@ header:hover {
 }
 #experience .experience-type-wrap .code .code-wrap span {
   margin-inline: 1.5rem;
-  color: #005792;
+  color: #53cde2;
 }
 #experience .experience-type-wrap .job {
   display: flex;
@@ -413,10 +499,14 @@ header:hover {
   height: 2.5rem;
   border-radius: 50%;
   position: absolute;
+  transition: 0.5s;
   cursor: pointer;
 }
 #projects button:hover {
   background: #005792;
+}
+#projects button:active {
+  background: #53cde2;
 }
 #projects button#project-prev {
   left: 4rem;
@@ -492,7 +582,7 @@ header:hover {
   position: absolute;
   width: 10rem;
   background: #d1f4fa;
-  top: calc(50% - 2rem);
+  top: calc(50% - 3rem);
   left: calc(50% - 5.5rem);
   z-index: 2;
   border-radius: 1rem;
@@ -501,8 +591,15 @@ header:hover {
   opacity: 0;
   transition: 0.4s;
 }
-#projects .project-wrap .project-panel .project-card .detail h2 {
+#projects .project-wrap .project-panel .project-card .detail:hover {
+  background: #53cde2;
+}
+#projects .project-wrap .project-panel .project-card .detail:hover h3 {
+  color: #edf9fc;
+}
+#projects .project-wrap .project-panel .project-card .detail h3 {
   padding: 0;
+  transition: 0.5s;
 }
 
 footer {
@@ -530,4 +627,8 @@ footer div a .img {
 footer h6 {
   padding: 0;
   margin-top: 3rem;
+}
+
+.tttt {
+  transform: translateX(5rem);
 }/*# sourceMappingURL=index.css.map */

@@ -14,7 +14,7 @@ $(document).on("scroll", function () {
 });
 
 // 輪播照片
-let heroN = 1;
+let heroN = 0;
 function heroCarousel() {
     cardLength = $("#hero .carousel .img-box").length;
     $("#hero .carousel .img-box").css("opacity", "0");
@@ -27,22 +27,60 @@ function heroCarousel() {
 }
 setInterval(heroCarousel, 2500);
 
+//文字動畫
+$("#hero-text h1").each(function () {
+    const text = $(this).text();
+    $(this).html("");
+
+    for (let char of text) {
+        if (char === " ") {
+            $(this).append("<span>&nbsp;</span>");
+        } else {
+            $(this).append(`<span>${char}</span>`);
+        }
+    }
+});
+const tl = gsap.timeline();
+$("#hero-text h1").each(function () {
+    const spans = $(this).find("span");
+    tl.to(
+        spans,
+        {
+            duration: 0.04,
+            opacity: 1,
+            stagger: 0.04,
+            ease: "power1.inOut",
+        },
+        "+=0.5"
+    );
+});
+tl.call(() => {
+    const lastH1 = $("#hero-text h1").last();
+    const lastSpan = lastH1.find("span").last();
+
+    gsap.to(lastSpan, {
+        y: -10,
+        duration: 0.5,
+        yoyo: true,
+        repeat: -1,
+        ease: "power1.inOut",
+    });
+});
+
 // 向下按鈕
 const windowHeight = window.innerHeight;
-$(".down-arrow").on("click", function () {
-    $("html, body").animate({ scrollTop: windowHeight }, 800);
-});
-$("#btn-about").on("click", function () {
-    $("html, body").animate({ scrollTop: windowHeight }, 800);
-});
-$("#btn-skill").on("click", function () {
-    $("html, body").animate({ scrollTop: windowHeight * 2 }, 800);
-});
-$("#btn-experience").on("click", function () {
-    $("html, body").animate({ scrollTop: windowHeight * 3 }, 800);
-});
-$("#btn-portfolio").on("click", function () {
-    $("html, body").animate({ scrollTop: windowHeight * 4.25 }, 800);
+const buttons = [
+    { selector: "#logo", scrollPosition: 0 },
+    { selector: ".down-arrow", scrollPosition: windowHeight },
+    { selector: "#btn-about", scrollPosition: windowHeight },
+    { selector: "#btn-skill", scrollPosition: windowHeight * 2 },
+    { selector: "#btn-experience", scrollPosition: windowHeight * 3 },
+    { selector: "#btn-portfolio", scrollPosition: windowHeight * 4.25 },
+];
+buttons.forEach((button) => {
+    $(button.selector).on("click", function () {
+        $("html, body").animate({ scrollTop: button.scrollPosition }, 800);
+    });
 });
 
 // 技能
@@ -71,8 +109,10 @@ function skillButtonClick(noTransition = false) {
     }
 }
 function skillOpacityChange() {
-    $(".skill-full-card").css("opacity", "0");
-    $(`.skill-full-card:nth-child(${skillN + 1})`).css("opacity", "1");
+    $(".skill-full-card").css("opacity", "0").css("z-index", "0");
+    $(`.skill-full-card:nth-child(${skillN + 1})`)
+        .css("opacity", "1")
+        .css("z-index", "2");
 }
 
 $(".skill-panel").css("transform", `translateX(${initialSkillX}px)`);

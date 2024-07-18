@@ -5,9 +5,12 @@ $light: #edf9fc;
 $dark: #545454;
 $transition: 0.5s;
 
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Lobster&display=swap");
+@import url("//fonts.googleapis.com/earlyaccess/notosanstc.css");
 :root {
     font-size: 16px;
     color: $dark;
+    font-family: "Comic Sans MS", "Noto Sans TC";
 }
 //scrollbar
 ::-webkit-scrollbar {
@@ -38,10 +41,11 @@ body {
         padding-bottom: 1rem;
     }
     h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
     h2 {
-        font-size: 2rem;
+        font-size: 2.5rem;
+        color: $primary;
     }
     h3 {
         font-size: 1.75rem;
@@ -76,6 +80,7 @@ header {
     width: 100vw;
     z-index: 999;
     transition: 0.3s;
+
     &.scroll-down {
         background: rgba(84, 84, 84, 0.5);
     }
@@ -88,6 +93,20 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 1rem 3rem;
+    #logo {
+        border: none;
+        background: none;
+        cursor: pointer;
+        &:hover .logo {
+            transform: translateY(-0.1rem);
+        }
+        .logo {
+            transition: $transition;
+            font-family: "Caveat";
+            text-shadow: 1px 2px $light, 0 0 10px $primary;
+            padding: 0;
+        }
+    }
 
     & .navbar {
         display: flex;
@@ -98,6 +117,7 @@ header {
             background: $third;
             font-size: 1.2rem;
             border-radius: 1rem;
+            font-family: "Caveat";
             cursor: pointer;
             transition: 0.3s;
             &.scroll-down {
@@ -107,6 +127,7 @@ header {
             &:hover {
                 background: $second;
                 color: $light;
+                transform: translateY(-0.1rem);
             }
             &:active {
                 background: $primary;
@@ -122,6 +143,23 @@ header {
     position: relative;
     height: 100vh;
     overflow: hidden;
+    #hero-text {
+        position: absolute;
+        z-index: 90;
+        text-align: center;
+        left: calc(50% - 22.5rem);
+        top: calc(50% - 7.5rem);
+        width: 45rem;
+        height: 15rem;
+        h1 {
+            color: $second;
+            font-size: 3.5rem;
+            span {
+                opacity: 0;
+                display: inline-block;
+            }
+        }
+    }
     .down-arrow {
         position: absolute;
         width: 6rem;
@@ -139,12 +177,14 @@ header {
             width: 6rem;
         }
     }
-    .img-box {
-        position: absolute;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        transition: 1s;
+    .carousel {
+        .img-box {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            transition: 1s;
+        }
     }
 }
 
@@ -161,11 +201,20 @@ header {
         justify-content: space-evenly;
         align-items: center;
         flex-wrap: wrap;
-    }
-    .avatar {
-        width: 20rem;
-        border-radius: 5rem;
-        overflow: hidden;
+        .avatar {
+            width: 20rem;
+            border-radius: 5rem;
+            overflow: hidden;
+        }
+        .about-content {
+            p {
+                line-height: 2rem;
+            }
+            span {
+                font-style: italic;
+                color: $second;
+            }
+        }
     }
 }
 
@@ -186,12 +235,51 @@ header {
             }
             .skill-full-content {
                 position: absolute;
-                min-width: 10rem;
+                width: 11rem;
                 border-radius: 2rem;
                 top: 10rem;
-                left: 15rem;
+                left: 20rem;
                 background: $third;
                 padding: 2rem 3rem;
+                transition: $transition;
+                .skill-content-box {
+                    display: flex;
+                    position: relative;
+                    .skill-main-content {
+                        width: 15rem;
+                    }
+                    .skill-content-detail {
+                        position: absolute;
+                        left: 0rem;
+                        transition: $transition;
+                        opacity: 0;
+                        width: 30rem;
+                        height: 100%;
+                        font-size: 0.9rem;
+                        overflow: hidden;
+                        p {
+                            line-height: 3rem;
+                        }
+                    }
+                }
+                &:hover {
+                    width: 40rem;
+                    .skill-content-detail {
+                        opacity: 1;
+                        left: 12rem;
+                    }
+                }
+                &:not(:hover) {
+                    .skill-content-detail {
+                        transition: 0.2s;
+                    }
+                }
+                h3 {
+                    color: $primary;
+                }
+                p {
+                    font-style: italic;
+                }
             }
         }
     }
@@ -215,8 +303,12 @@ header {
                 height: 2.5rem;
                 border-radius: 50%;
                 cursor: pointer;
+                transition: $transition;
                 &:hover {
                     background: $primary;
+                }
+                &:active {
+                    background: $second;
                 }
             }
         }
@@ -295,6 +387,7 @@ header {
                 background: $third;
                 border-radius: 5rem;
                 cursor: pointer;
+                transition: $transition;
                 &.active {
                     color: $light;
                     background: $primary;
@@ -339,7 +432,7 @@ header {
                 }
                 span {
                     margin-inline: 1.5rem;
-                    color: $primary;
+                    color: $second;
                 }
             }
         }
@@ -418,9 +511,13 @@ header {
         height: 2.5rem;
         border-radius: 50%;
         position: absolute;
+        transition: $transition;
         cursor: pointer;
         &:hover {
             background: $primary;
+        }
+        &:active {
+            background: $second;
         }
         &#project-prev {
             left: 4rem;
@@ -498,7 +595,7 @@ header {
                     position: absolute;
                     width: 10rem;
                     background: $third;
-                    top: calc(50% - 2rem);
+                    top: calc(50% - 3rem);
                     left: calc(50% - 5.5rem);
                     z-index: 2;
                     border-radius: 1rem;
@@ -506,8 +603,15 @@ header {
                     text-align: center;
                     opacity: 0;
                     transition: 0.4s;
-                    h2 {
+                    &:hover {
+                        background: $second;
+                        h3 {
+                            color: $light;
+                        }
+                    }
+                    h3 {
                         padding: 0;
+                        transition: $transition;
                     }
                 }
             }
@@ -539,4 +643,9 @@ footer {
         padding: 0;
         margin-top: 3rem;
     }
+}
+
+.tttt {
+    transform: translateX(5rem);
+    // display: none;
 }

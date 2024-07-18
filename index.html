@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ader's portfolio</title>
+    <title>Ader's Website</title>
     <link rel="icon" href="./assets/images/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css"
         integrity="sha512-IJEbgDEF7OeKJRa0MY2PApnyJHRIsgzCveek4ec8VWQ+7KG3ZSKVNYa5xP/Gh0hVP0Mwb+gBsk+GwR3JQGhQNg=="
@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
     <link rel="stylesheet" href="./index.css">
 </head>
 
@@ -22,7 +23,9 @@
     <!-- header -->
     <header>
         <div class="header-wrap">
-            <h1 class="logo">Ader</h1>
+            <button id="logo">
+                <h1 class="logo">Ader</h1>
+            </button>
             <div class="navbar">
                 <button id="btn-about">About</button>
                 <button id="btn-skill">Skill</button>
@@ -38,6 +41,11 @@
                 <img src="./assets/images/Animation - arrow.gif" class="img">
             </div>
         </button>
+        <div id="hero-text">
+            <h1>Hi. I'm Ader.</h1>
+            <h1>Let me show you</h1>
+            <h1>something about myself.</h1>
+        </div>
         <div class="carousel">
             <div class="img-box">
                 <img src="https://images.pexels.com/photos/2747449/pexels-photo-2747449.jpeg" class="img">
@@ -63,8 +71,12 @@
         <div class="about-wrap">
             <div class="avatar"><img src="./assets/images/avatar.jpg" class="img"></div>
             <div class="about-content">
-                <p>我是Ader，結業於資展國際-前端工程師就業養成班，擔任小組技術長。</p>
-                <p>持續透過Udemy、YouTube自學，精進自身能力。</p>
+                <p>我是Ader，</p>
+                <p>喜歡獨立音樂，時常出沒於台灣各大音樂祭與專場。</p>
+                <p>閒暇之餘彈個吉他，出門溜搭。</p>
+                <p>從自學Python接觸程式語言，最後選擇專精於網站製作與前端工程。</p>
+                <p>除透過Udemy、Youtube自學外，也投入資展國際-前端工程師就業養成班，</p>
+                <p>期間擔任技術長並學習更全面的前端相關知識。</p>
                 <p>
                     <span>#熱愛挑戰</span>
                     <span>#善於溝通</span>
@@ -79,46 +91,76 @@
     <section id="skill">
         <div class="skill-full">
             <div class="skill-full-card">
-                <img src="https://images.pexels.com/photos/574073/pexels-photo-574073.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                <img src="https://images.pexels.com/photos/1420702/pexels-photo-1420702.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                     class="img">
                 <div class="skill-full-content">
-                    <h2>前端技術</h2>
-                    <ul>
-                        <li>HTML / CSS</li>
-                        <li>Bootstrap</li>
-                        <li>SASS / SCSS</li>
-                        <li>JavaScript / jQuery</li>
-                        <li>React / Next.js</li>
-                        <li>Redux</li>
-                        <li>RWD響應式設計</li>
-                        <li>API串接</li>
-                    </ul>
+                    <h3>前端技術</h3>
+                    <div class="skill-content-box">
+                        <div class="skill-main-content">
+                            <p>HTML / CSS</p>
+                            <p>Bootstrap</p>
+                            <p>RWD響應式設計</p>
+                            <p>SASS / SCSS</p>
+                            <p>JavaScript / jQuery</p>
+                            <p>React / Next.js</p>
+                            <p>Redux</p>
+                            <p>API串接</p>
+                        </div>
+                        <div class="skill-content-detail">
+                            <p>能以純CSS及Bootstrap完成切版，及SCSS預處理器使用。
+                            </p>
+                            <p>了解ES6語法，jQuery使用，實作常見特效(carousel、自動輪播)。
+                            </p>
+                            <p>熟悉React-router、React-Hook，及使用Redux進行狀態管理。</p>
+                            <p>熟悉API開發與串接，外部API串接經驗(google登入、全國運動場館)</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <div class="skill-full-card">
                 <img src="https://images.pexels.com/photos/574077/pexels-photo-574077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                     class="img">
                 <div class="skill-full-content">
-                    <h2>後端技術</h2>
-                    <ul>
-                        <li>Node.js / Express</li>
-                        <li>PHP</li>
-                        <li>MySQL / NoSQL</li>
-                        <li>Firebase</li>
-                    </ul>
+                    <h3>後端技術</h3>
+                    <div class="skill-content-box">
+                        <div class="skill-main-content">
+                            <p>Node.js / Express</p>
+                            <p>PHP</p>
+                            <p>XAMPP</p>
+                            <p>MySQL / NoSQL</p>
+                            <p>Firebase</p>
+                        </div>
+                        <div class="skill-content-detail">
+                            <p>能以Node.js / Express進行Web開發，及撰寫RESTful API。
+                            </p>
+                            <p>了解MySQL語法，使用MariaDB處理過資料。</p>
+                            <p>使用Firestore Database與Firebase Functions處理資料與部署。</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <div class="skill-full-card">
-                <img src="https://images.pexels.com/photos/1420702/pexels-photo-1420702.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                <img src="https://images.pexels.com/photos/574073/pexels-photo-574073.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                     class="img">
                 <div class="skill-full-content">
-                    <h2>相關技術</h2>
-                    <ul>
-                        <li>Git</li>
-                        <li>npm</li>
-                        <li>Figma</li>
-                        <li>網頁部署</li>
-                    </ul>
+                    <h3>相關技術</h3>
+                    <div class="skill-content-box">
+                        <div class="skill-main-content">
+                            <p>Git</p>
+                            <p>npm</p>
+                            <p>Figma</p>
+                            <p>Photoshop</p>
+                            <p>網頁部署</p>
+                        </div>
+                        <div class="skill-content-detail">
+                            <p>使用git進行版本控制，有多人協作經驗，並遵循Git Flow開發。</p>
+                            <p>熟悉npm操作及Figma之設計。</p>
+                            <p>Vercel、Github pages、Firebase部屬經驗。</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -218,10 +260,11 @@
                 </div>
                 <div class="code">
                     <div class="code-wrap">
-                        <h4>2024/05 - present <span>Udemy - React / Vue / TypeScript</span></h4>
+                        <h4>2024/05 - present <span>Udemy - React / Tailwind / TypeScript</span></h4>
                         <h4>2023/12 - 2024/05 <span>資展國際 - 前端工程師就業養成班</span></h4>
                         <h4>2023/12 - 2024/05 <span>Udemy - 網頁全端開發</span></h4>
                         <h4>2023/09 - 2024/01 <span>台大彭彭老師 - 前端工程師線上課程 </span></h4>
+                        <h4>2023/07 - 2023/09 <span>台大彭彭老師 - Python相關課程 </span></h4>
                     </div>
                 </div>
             </div>
@@ -249,7 +292,7 @@
                             </div>
                         </div>
                         <div class="detail">
-                            <h2>See More</h2>
+                            <h3>See More</h3>
                         </div>
                     </div>
                 </a>
@@ -268,7 +311,7 @@
                             </div>
                         </div>
                         <div class="detail">
-                            <h2>See More</h2>
+                            <h3>See More</h3>
                         </div>
                     </div>
                 </a>
@@ -286,7 +329,7 @@
                             </div>
                         </div>
                         <div class="detail">
-                            <h2>See More</h2>
+                            <h3>See More</h3>
                         </div>
                     </div>
                 </a>
@@ -304,7 +347,7 @@
                             </div>
                         </div>
                         <div class="detail">
-                            <h2>See More</h2>
+                            <h3>See More</h3>
                         </div>
                     </div>
                 </a>
@@ -322,7 +365,7 @@
                             </div>
                         </div>
                         <div class="detail">
-                            <h2>See More</h2>
+                            <h3>See More</h3>
                         </div>
                     </div>
                 </a>
