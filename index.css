@@ -5,6 +5,16 @@
   color: #545454;
   font-family: "Comic Sans MS", "Noto Sans TC";
 }
+@media screen and (max-width: 992px) {
+  :root {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  :root {
+    font-size: 0.8rem;
+  }
+}
 
 ::-webkit-scrollbar {
   width: 7px;
@@ -71,6 +81,10 @@ body a {
   color: initial;
 }
 
+section {
+  max-width: 100vw;
+}
+
 header {
   position: fixed;
   width: 100vw;
@@ -89,6 +103,12 @@ header:hover {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 3rem;
+}
+@media screen and (max-width: 576px) {
+  .header-wrap {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
 .header-wrap #logo {
   border: none;
@@ -153,6 +173,11 @@ header:hover {
   color: #53cde2;
   font-size: 3.5rem;
 }
+@media screen and (max-width: 576px) {
+  #hero #hero-text h1 {
+    font-size: 2rem;
+  }
+}
 #hero #hero-text h1 span {
   opacity: 0;
   display: inline-block;
@@ -174,6 +199,9 @@ header:hover {
 #hero .down-arrow .arrow-img-box {
   width: 6rem;
 }
+#hero .carousel {
+  height: 100%;
+}
 #hero .carousel .img-box {
   position: absolute;
   top: 0;
@@ -194,12 +222,21 @@ header:hover {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  flex-wrap: wrap;
+}
+@media screen and (max-width: 992px) {
+  #about .about-wrap {
+    max-width: 90%;
+  }
 }
 #about .about-wrap .avatar {
   width: 20rem;
   border-radius: 5rem;
   overflow: hidden;
+}
+@media screen and (max-width: 992px) {
+  #about .about-wrap .avatar {
+    width: 15rem;
+  }
 }
 #about .about-wrap .about-content p {
   line-height: 2rem;
@@ -237,12 +274,23 @@ header:hover {
   padding: 2rem 3rem;
   transition: 0.5s;
 }
+@media screen and (max-width: 576px) {
+  #skill .skill-full .skill-full-card .skill-full-content {
+    top: 10rem;
+    left: calc(50% - 7.5rem);
+  }
+}
 #skill .skill-full .skill-full-card .skill-full-content .skill-content-box {
   display: flex;
   position: relative;
 }
 #skill .skill-full .skill-full-card .skill-full-content .skill-content-box .skill-main-content {
   width: 15rem;
+}
+@media screen and (max-width: 576px) {
+  #skill .skill-full .skill-full-card .skill-full-content .skill-content-box .skill-main-content {
+    width: 10rem;
+  }
 }
 #skill .skill-full .skill-full-card .skill-full-content .skill-content-box .skill-content-detail {
   position: absolute;
@@ -254,11 +302,21 @@ header:hover {
   font-size: 0.9rem;
   overflow: hidden;
 }
+@media screen and (max-width: 576px) {
+  #skill .skill-full .skill-full-card .skill-full-content .skill-content-box .skill-content-detail {
+    display: none;
+  }
+}
 #skill .skill-full .skill-full-card .skill-full-content .skill-content-box .skill-content-detail p {
   line-height: 3rem;
 }
 #skill .skill-full .skill-full-card .skill-full-content:hover {
   width: 40rem;
+}
+@media screen and (max-width: 576px) {
+  #skill .skill-full .skill-full-card .skill-full-content:hover {
+    width: 10rem;
+  }
 }
 #skill .skill-full .skill-full-card .skill-full-content:hover .skill-content-detail {
   opacity: 1;
@@ -287,6 +345,12 @@ header:hover {
   z-index: 2;
   gap: 1rem;
 }
+@media screen and (max-width: 576px) {
+  #skill .skill-wrap .skill-btn-group {
+    bottom: 5rem;
+    right: calc(50% - 1rem);
+  }
+}
 #skill .skill-wrap .skill-btn-group button {
   background: #53cde2;
   color: #edf9fc;
@@ -306,6 +370,7 @@ header:hover {
 #skill .skill-wrap .skill-panel-wrap {
   display: flex;
   width: 24rem;
+  max-width: 90%;
   padding-block: 1rem;
   overflow: hidden;
 }
@@ -326,6 +391,16 @@ header:hover {
   border-radius: 2rem;
   background: url("https://media.istockphoto.com/id/1669453534/photo/3d-render-cloud-computing-circuit-board-background.jpg?s=1024x1024&w=is&k=20&c=okVK7qp59LYKAYor5fpAVoLbWjftCs37vexzBEjUecc=");
 }
+@media screen and (max-width: 576px) {
+  #skill .skill-wrap .skill-panel-wrap .skill-panel .skill-card {
+    width: 5rem;
+    padding: 0.5rem 0.5rem;
+    justify-content: center;
+  }
+  #skill .skill-wrap .skill-panel-wrap .skill-panel .skill-card h5 {
+    padding: 0;
+  }
+}
 #skill .skill-wrap .skill-panel-wrap .skill-panel .skill-card:hover {
   scale: 1.02;
 }
@@ -342,6 +417,11 @@ header:hover {
   background: #d1f4fa;
   border-radius: 0.3rem;
 }
+@media screen and (max-width: 576px) {
+  #skill .skill-wrap .skill-panel-wrap .skill-panel .skill-card .skill-img-box-wrap .skill-img-box {
+    display: none;
+  }
+}
 #skill .skill-wrap .skill-panel-wrap .skill-panel .skill-card .skill-img-box-wrap .skill-img-box2 {
   width: 3rem;
   height: 2rem;
@@ -350,12 +430,22 @@ header:hover {
   background: #d1f4fa;
   border-radius: 0.2rem;
 }
+@media screen and (max-width: 576px) {
+  #skill .skill-wrap .skill-panel-wrap .skill-panel .skill-card .skill-img-box-wrap .skill-img-box2 {
+    display: none;
+  }
+}
 
 #experience {
   padding: 3rem;
   height: 110vh;
   display: flex;
   justify-content: center;
+}
+@media screen and (max-width: 576px) {
+  #experience {
+    height: 150vh;
+  }
 }
 #experience .experience-wrap {
   padding-block: 5rem;
@@ -437,12 +527,17 @@ header:hover {
   display: flex;
   gap: 3rem;
 }
+@media screen and (max-width: 576px) {
+  #experience .experience-type-wrap .job .job-card-wrap {
+    flex-wrap: wrap;
+  }
+}
 #experience .experience-type-wrap .job .job-card-wrap .job-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: 0.2s;
-  padding: 0.5rem 1rem;
+  padding: 0.2rem 1rem;
   cursor: pointer;
   z-index: 2;
   width: 20rem;
@@ -452,11 +547,12 @@ header:hover {
   box-shadow: 0 5px 5px #888;
 }
 #experience .experience-type-wrap .job .job-card-wrap .job-card .img-box {
-  width: 12rem;
-  height: 12rem;
+  width: 10rem;
+  height: 10rem;
   border-radius: 50%;
   overflow: hidden;
   margin-block: 1rem;
+  border: 1px solid #53cde2;
 }
 #experience .experience-type-wrap .job .job-card-wrap .job-card .job-content {
   display: flex;
@@ -467,7 +563,7 @@ header:hover {
   text-align: center;
 }
 #experience .experience-type-wrap .job .job-card-wrap .job-card .job-content .job-click-wrap span {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #53cde2;
 }
 #experience .experience-type-wrap .job .job-card-wrap .job-card .job-content .job-click-show {
@@ -501,6 +597,7 @@ header:hover {
   position: absolute;
   transition: 0.5s;
   cursor: pointer;
+  z-index: 99;
 }
 #projects button:hover {
   background: #005792;
@@ -512,17 +609,33 @@ header:hover {
   left: 4rem;
   top: 50%;
 }
+@media screen and (max-width: 576px) {
+  #projects button#project-prev {
+    left: 2rem;
+  }
+}
 #projects button#project-next {
   right: 4rem;
   top: 50%;
+}
+@media screen and (max-width: 576px) {
+  #projects button#project-next {
+    right: 2rem;
+  }
 }
 #projects .project-wrap {
   display: flex;
   position: relative;
   width: 75rem;
+  max-width: 80vw;
   height: 30rem;
   overflow: hidden;
   align-items: center;
+}
+@media screen and (max-width: 992px) {
+  #projects .project-wrap {
+    width: 50rem;
+  }
 }
 #projects .project-wrap .project-panel {
   position: absolute;
@@ -537,6 +650,11 @@ header:hover {
   border-radius: 1rem;
   overflow: hidden;
   position: relative;
+}
+@media screen and (max-width: 576px) {
+  #projects .project-wrap .project-panel .project-card {
+    width: 18rem;
+  }
 }
 #projects .project-wrap .project-panel .project-card::after {
   content: "";

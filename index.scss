@@ -4,13 +4,20 @@ $third: #d1f4fa;
 $light: #edf9fc;
 $dark: #545454;
 $transition: 0.5s;
-
+$breakpoint-sm: 576px;
+$breakpoint-md: 992px;
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Lobster&display=swap");
 @import url("//fonts.googleapis.com/earlyaccess/notosanstc.css");
 :root {
     font-size: 16px;
     color: $dark;
     font-family: "Comic Sans MS", "Noto Sans TC";
+    @media screen and (max-width: $breakpoint-md) {
+        font-size: 0.9rem;
+    }
+    @media screen and (max-width: $breakpoint-sm) {
+        font-size: 0.8rem;
+    }
 }
 //scrollbar
 ::-webkit-scrollbar {
@@ -75,6 +82,9 @@ body {
         color: initial;
     }
 }
+section {
+    max-width: 100vw;
+}
 header {
     position: fixed;
     width: 100vw;
@@ -93,6 +103,11 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 1rem 3rem;
+    @media screen and (max-width: $breakpoint-sm) {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
     #logo {
         border: none;
         background: none;
@@ -143,6 +158,7 @@ header {
     position: relative;
     height: 100vh;
     overflow: hidden;
+
     #hero-text {
         position: absolute;
         z-index: 90;
@@ -154,6 +170,9 @@ header {
         h1 {
             color: $second;
             font-size: 3.5rem;
+            @media screen and (max-width: $breakpoint-sm) {
+                font-size: 2rem;
+            }
             span {
                 opacity: 0;
                 display: inline-block;
@@ -178,6 +197,7 @@ header {
         }
     }
     .carousel {
+        height: 100%;
         .img-box {
             position: absolute;
             top: 0;
@@ -200,11 +220,17 @@ header {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        flex-wrap: wrap;
+        @media screen and (max-width: $breakpoint-md) {
+            max-width: 90%;
+        }
+
         .avatar {
             width: 20rem;
             border-radius: 5rem;
             overflow: hidden;
+            @media screen and (max-width: $breakpoint-md) {
+                width: 15rem;
+            }
         }
         .about-content {
             p {
@@ -242,11 +268,18 @@ header {
                 background: $third;
                 padding: 2rem 3rem;
                 transition: $transition;
+                @media screen and (max-width: $breakpoint-sm) {
+                    top: 10rem;
+                    left: calc(50% - 7.5rem);
+                }
                 .skill-content-box {
                     display: flex;
                     position: relative;
                     .skill-main-content {
                         width: 15rem;
+                        @media screen and (max-width: $breakpoint-sm) {
+                            width: 10rem;
+                        }
                     }
                     .skill-content-detail {
                         position: absolute;
@@ -257,6 +290,9 @@ header {
                         height: 100%;
                         font-size: 0.9rem;
                         overflow: hidden;
+                        @media screen and (max-width: $breakpoint-sm) {
+                            display: none;
+                        }
                         p {
                             line-height: 3rem;
                         }
@@ -264,6 +300,9 @@ header {
                 }
                 &:hover {
                     width: 40rem;
+                    @media screen and (max-width: $breakpoint-sm) {
+                        width: 10rem;
+                    }
                     .skill-content-detail {
                         opacity: 1;
                         left: 12rem;
@@ -295,6 +334,10 @@ header {
             display: flex;
             z-index: 2;
             gap: 1rem;
+            @media screen and (max-width: $breakpoint-sm) {
+                bottom: 5rem;
+                right: calc(50% - 1rem);
+            }
             button {
                 background: $second;
                 color: $light;
@@ -315,6 +358,7 @@ header {
         .skill-panel-wrap {
             display: flex;
             width: 24rem;
+            max-width: 90%;
             padding-block: 1rem;
             overflow: hidden;
             .skill-panel {
@@ -333,6 +377,14 @@ header {
                     transition: $transition;
                     border-radius: 2rem;
                     background: url("https://media.istockphoto.com/id/1669453534/photo/3d-render-cloud-computing-circuit-board-background.jpg?s=1024x1024&w=is&k=20&c=okVK7qp59LYKAYor5fpAVoLbWjftCs37vexzBEjUecc=");
+                    @media screen and (max-width: $breakpoint-sm) {
+                        width: 5rem;
+                        padding: 0.5rem 0.5rem;
+                        justify-content: center;
+                        h5 {
+                            padding: 0;
+                        }
+                    }
                     &:hover {
                         scale: 1.02;
                     }
@@ -347,6 +399,9 @@ header {
                             padding: 0.2rem 0.3rem;
                             background: $third;
                             border-radius: 0.3rem;
+                            @media screen and (max-width: $breakpoint-sm) {
+                                display: none;
+                            }
                         }
                         .skill-img-box2 {
                             width: 3rem;
@@ -355,6 +410,9 @@ header {
                             padding: 0.2rem;
                             background: $third;
                             border-radius: 0.2rem;
+                            @media screen and (max-width: $breakpoint-sm) {
+                                display: none;
+                            }
                         }
                     }
                 }
@@ -368,6 +426,9 @@ header {
     height: 110vh;
     display: flex;
     justify-content: center;
+    @media screen and (max-width: $breakpoint-sm) {
+        height: 150vh;
+    }
     .experience-wrap {
         padding-block: 5rem;
         display: flex;
@@ -445,26 +506,30 @@ header {
             .job-card-wrap {
                 display: flex;
                 gap: 3rem;
+                @media screen and (max-width: $breakpoint-sm) {
+                    flex-wrap: wrap;
+                }
                 .job-card {
                     display: flex;
                     flex-direction: column;
-                    // margin-block: 3rem;
                     align-items: center;
                     transition: 0.2s;
-                    padding: 0.5rem 1rem;
+                    padding: 0.2rem 1rem;
                     cursor: pointer;
                     z-index: 2;
                     width: 20rem;
+
                     &:hover {
                         transform: translateY(-5px);
                         box-shadow: 0 5px 5px #888;
                     }
                     .img-box {
-                        width: 12rem;
-                        height: 12rem;
+                        width: 10rem;
+                        height: 10rem;
                         border-radius: 50%;
                         overflow: hidden;
                         margin-block: 1rem;
+                        border: 1px solid $second;
                     }
                     .job-content {
                         display: flex;
@@ -473,7 +538,7 @@ header {
                         .job-click-wrap {
                             text-align: center;
                             span {
-                                font-size: 1.2rem;
+                                font-size: 1rem;
                                 color: $second;
                             }
                         }
@@ -513,6 +578,7 @@ header {
         position: absolute;
         transition: $transition;
         cursor: pointer;
+        z-index: 99;
         &:hover {
             background: $primary;
         }
@@ -522,19 +588,29 @@ header {
         &#project-prev {
             left: 4rem;
             top: calc(50%);
+            @media screen and (max-width: $breakpoint-sm) {
+                left: 2rem;
+            }
         }
         &#project-next {
             right: 4rem;
             top: calc(50%);
+            @media screen and (max-width: $breakpoint-sm) {
+                right: 2rem;
+            }
         }
     }
     .project-wrap {
         display: flex;
         position: relative;
         width: 75rem;
+        max-width: 80vw;
         height: 30rem;
         overflow: hidden;
         align-items: center;
+        @media screen and (max-width: $breakpoint-md) {
+            width: 50rem;
+        }
 
         .project-panel {
             position: absolute;
@@ -548,6 +624,9 @@ header {
                 border-radius: 1rem;
                 overflow: hidden;
                 position: relative;
+                @media screen and (max-width: $breakpoint-sm) {
+                    width: 18rem;
+                }
                 &::after {
                     content: "";
                     position: absolute;
