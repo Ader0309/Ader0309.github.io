@@ -184,7 +184,7 @@ header {
         width: 6rem;
         height: 6rem;
         bottom: 1rem;
-        left: calc(50% - 5rem);
+        left: calc(50% - 3rem);
         z-index: 90;
         background: transparent;
         border: none;
@@ -192,6 +192,7 @@ header {
         justify-content: center;
         align-items: center;
         cursor: pointer;
+
         .arrow-img-box {
             width: 6rem;
         }
@@ -222,6 +223,11 @@ header {
         align-items: center;
         @media screen and (max-width: $breakpoint-md) {
             max-width: 90%;
+            flex-wrap: wrap;
+        }
+        @media screen and (max-width: $breakpoint-sm) {
+            max-width: 80%;
+            flex-wrap: wrap;
         }
 
         .avatar {
@@ -271,6 +277,9 @@ header {
                 @media screen and (max-width: $breakpoint-sm) {
                     top: 10rem;
                     left: calc(50% - 7.5rem);
+                }
+                @media screen and (max-width: $breakpoint-md) {
+                    left: 5rem;
                 }
                 .skill-content-box {
                     display: flex;
@@ -327,6 +336,9 @@ header {
         bottom: 2rem;
         right: 0;
         z-index: 2;
+        @media screen and (max-width: $breakpoint-sm) {
+            right: calc(50% - 10rem);
+        }
         .skill-btn-group {
             position: absolute;
             bottom: 2rem;
@@ -336,7 +348,7 @@ header {
             gap: 1rem;
             @media screen and (max-width: $breakpoint-sm) {
                 bottom: 5rem;
-                right: calc(50% - 1rem);
+                right: calc(50% - 2.3rem);
             }
             button {
                 background: $second;
@@ -361,6 +373,9 @@ header {
             max-width: 90%;
             padding-block: 1rem;
             overflow: hidden;
+            @media screen and (max-width: $breakpoint-sm) {
+                width: 17rem;
+            }
             .skill-panel {
                 display: flex;
                 transition: $transition;
@@ -494,6 +509,11 @@ header {
                 span {
                     margin-inline: 1.5rem;
                     color: $second;
+                    @media screen and (max-width: $breakpoint-sm) {
+                        display: block;
+                        padding-top: 1rem;
+                        margin-inline: 0;
+                    }
                 }
             }
         }
@@ -610,6 +630,9 @@ header {
         align-items: center;
         @media screen and (max-width: $breakpoint-md) {
             width: 50rem;
+        }
+        @media screen and (max-width: $breakpoint-sm) {
+            width: 23rem;
         }
 
         .project-panel {

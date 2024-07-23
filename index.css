@@ -187,7 +187,7 @@ header:hover {
   width: 6rem;
   height: 6rem;
   bottom: 1rem;
-  left: calc(50% - 5rem);
+  left: calc(50% - 3rem);
   z-index: 90;
   background: transparent;
   border: none;
@@ -226,6 +226,13 @@ header:hover {
 @media screen and (max-width: 992px) {
   #about .about-wrap {
     max-width: 90%;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 576px) {
+  #about .about-wrap {
+    max-width: 80%;
+    flex-wrap: wrap;
   }
 }
 #about .about-wrap .avatar {
@@ -278,6 +285,11 @@ header:hover {
   #skill .skill-full .skill-full-card .skill-full-content {
     top: 10rem;
     left: calc(50% - 7.5rem);
+  }
+}
+@media screen and (max-width: 992px) {
+  #skill .skill-full .skill-full-card .skill-full-content {
+    left: 5rem;
   }
 }
 #skill .skill-full .skill-full-card .skill-full-content .skill-content-box {
@@ -337,6 +349,11 @@ header:hover {
   right: 0;
   z-index: 2;
 }
+@media screen and (max-width: 576px) {
+  #skill .skill-wrap {
+    right: calc(50% - 10rem);
+  }
+}
 #skill .skill-wrap .skill-btn-group {
   position: absolute;
   bottom: 2rem;
@@ -348,7 +365,7 @@ header:hover {
 @media screen and (max-width: 576px) {
   #skill .skill-wrap .skill-btn-group {
     bottom: 5rem;
-    right: calc(50% - 1rem);
+    right: calc(50% - 2.3rem);
   }
 }
 #skill .skill-wrap .skill-btn-group button {
@@ -373,6 +390,11 @@ header:hover {
   max-width: 90%;
   padding-block: 1rem;
   overflow: hidden;
+}
+@media screen and (max-width: 576px) {
+  #skill .skill-wrap .skill-panel-wrap {
+    width: 17rem;
+  }
 }
 #skill .skill-wrap .skill-panel-wrap .skill-panel {
   display: flex;
@@ -516,6 +538,13 @@ header:hover {
   margin-inline: 1.5rem;
   color: #53cde2;
 }
+@media screen and (max-width: 576px) {
+  #experience .experience-type-wrap .code .code-wrap span {
+    display: block;
+    padding-top: 1rem;
+    margin-inline: 0;
+  }
+}
 #experience .experience-type-wrap .job {
   display: flex;
   flex-direction: column;
@@ -635,6 +664,11 @@ header:hover {
 @media screen and (max-width: 992px) {
   #projects .project-wrap {
     width: 50rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  #projects .project-wrap {
+    width: 23rem;
   }
 }
 #projects .project-wrap .project-panel {
